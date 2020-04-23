@@ -1,0 +1,21 @@
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+         int i=stones.length;
+        int k=0;
+        while(i>1){
+            Arrays.sort(stones);
+            if(stones[i-1]>stones[i-2]){
+                stones[i-2]=Math.abs(stones[i-1]-stones[i-2]);
+                i=i-1;
+            }
+            else {
+                    i=i-2;
+            }
+    }
+        if(i==0)
+            return k;
+        else
+            k=stones[0];
+            return k;
+}
+}   
